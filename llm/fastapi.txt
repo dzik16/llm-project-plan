@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pillow
+rapidocr-onnxruntime
+docling
+requests
+pymupdf

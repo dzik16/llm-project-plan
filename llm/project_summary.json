@@ -1,0 +1,924 @@
+{
+  "data": [
+    {
+      "fullname": "2 requirement gathering ii 4 days wed 6",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/12/24",
+      "end_date": "07/16/24",
+      "total_tasks": 1,
+      "duration_days": 34,
+      "phases": [
+        "ANALYSIS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "12",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/12/24",
+      "end_date": "08/14/24",
+      "total_tasks": 2,
+      "duration_days": 63,
+      "phases": [
+        "ANALYSIS",
+        "REPORT"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "24 wed 6",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/12/24",
+      "end_date": "07/16/24",
+      "total_tasks": 1,
+      "duration_days": 34,
+      "phases": [
+        "ANALYSIS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "19",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/12/24",
+      "end_date": "08/05/24",
+      "total_tasks": 2,
+      "duration_days": 54,
+      "phases": [
+        "ANALYSIS",
+        "WINDOWS"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "24 herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/12/24",
+      "end_date": "07/16/24",
+      "total_tasks": 1,
+      "duration_days": 34,
+      "phases": [
+        "ANALYSIS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "2 herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "06/20/24",
+      "end_date": "07/05/24",
+      "total_tasks": 1,
+      "duration_days": 15,
+      "phases": [
+        "DESIGN"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "3 herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/08/24",
+      "end_date": "07/09/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "DESIGN"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "4 herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/10/24",
+      "end_date": "07/10/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "DESIGN"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "5 herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/16/24",
+      "total_tasks": 1,
+      "duration_days": 5,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "qa",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "09/05/24",
+      "total_tasks": 2,
+      "duration_days": 56,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "2 jeannie",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/08/24",
+      "end_date": "07/10/24",
+      "total_tasks": 1,
+      "duration_days": 2,
+      "phases": [
+        "FSD"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "herman",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/08/24",
+      "end_date": "09/05/24",
+      "total_tasks": 3,
+      "duration_days": 59,
+      "phases": [
+        "FSD",
+        "NEW",
+        "TESTING"
+      ],
+      "kompleksitas": 3
+    },
+    {
+      "fullname": "4",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "08/27/24",
+      "total_tasks": 1,
+      "duration_days": 47,
+      "phases": [
+        "DEVELOPMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "10 dashboard 3 days mon 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/15/24",
+      "end_date": "08/19/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "LANDING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "26",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/15/24",
+      "end_date": "08/19/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "LANDING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 wed 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/19/24",
+      "total_tasks": 2,
+      "duration_days": 18,
+      "phases": [
+        "LANDING",
+        "TRANSACTION"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "28",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/15/24",
+      "end_date": "08/19/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "LANDING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 26 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/15/24",
+      "end_date": "08/19/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "LANDING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "12 outgoing - data entry (new) 5 days thu 7",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/24/24",
+      "total_tasks": 1,
+      "duration_days": 13,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "11",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/24/24",
+      "total_tasks": 1,
+      "duration_days": 13,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 wed 7",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/24/24",
+      "total_tasks": 1,
+      "duration_days": 13,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "17",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/24/24",
+      "total_tasks": 1,
+      "duration_days": 13,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/11/24",
+      "end_date": "08/15/24",
+      "total_tasks": 2,
+      "duration_days": 35,
+      "phases": [
+        "AUTHORIZE",
+        "TRANSACTION"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "12 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/18/24",
+      "end_date": "07/19/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "OUTGOING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "13 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/22/24",
+      "end_date": "07/22/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "OUTGOING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "14 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/23/24",
+      "end_date": "07/23/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "OUTGOING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "15 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/24/24",
+      "end_date": "07/24/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "OUTGOING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/30/21",
+      "end_date": "07/31/24",
+      "total_tasks": 2,
+      "duration_days": 1035,
+      "phases": [
+        "DEPLOYMENT",
+        "TRANSACTION"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "16 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/25/24",
+      "end_date": "07/31/24",
+      "total_tasks": 1,
+      "duration_days": 6,
+      "phases": [
+        "OUTGOING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "20 outgoing - data entry (new) 5 days thu 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/07/24",
+      "total_tasks": 1,
+      "duration_days": 6,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "1",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/07/24",
+      "total_tasks": 1,
+      "duration_days": 6,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "7",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/07/24",
+      "total_tasks": 1,
+      "duration_days": 6,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 18 alvyb",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/07/24",
+      "total_tasks": 1,
+      "duration_days": 6,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "22 user - adding branch code user 1 day thu 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "SECURITY"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/06/24",
+      "end_date": "08/14/24",
+      "total_tasks": 3,
+      "duration_days": 8,
+      "phases": [
+        "REPORT",
+        "SECURITY"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "24 thu 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "SECURITY"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 20 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "SECURITY"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 entry mt202 3 days fri 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "9",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 tue 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "13",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 22 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/08/24",
+      "end_date": "08/08/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "TRANSACTION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "38 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/22/24",
+      "end_date": "08/23/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "GENERATE"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "25 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/16/24",
+      "end_date": "08/21/24",
+      "total_tasks": 1,
+      "duration_days": 5,
+      "phases": [
+        "ID"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "28 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/22/24",
+      "end_date": "08/26/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "DATA"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "29 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/27/24",
+      "end_date": "08/28/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "AUTHORIZE"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "30 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/29/24",
+      "end_date": "08/30/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "RETURN"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "31 alvyn",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/02/24",
+      "end_date": "09/03/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "CANCELLATION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "34 new outgoing - bkt transaction report 3 days thu 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/06/24",
+      "end_date": "08/14/24",
+      "total_tasks": 1,
+      "duration_days": 8,
+      "phases": [
+        "REPORT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 mon 8",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/06/24",
+      "end_date": "08/14/24",
+      "total_tasks": 1,
+      "duration_days": 8,
+      "phases": [
+        "REPORT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 46 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/06/24",
+      "end_date": "08/14/24",
+      "total_tasks": 1,
+      "duration_days": 8,
+      "phases": [
+        "REPORT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "34 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/13/24",
+      "end_date": "08/14/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "35 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/15/24",
+      "end_date": "08/15/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "36 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/16/24",
+      "end_date": "08/16/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "37 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/19/24",
+      "end_date": "08/21/24",
+      "total_tasks": 1,
+      "duration_days": 2,
+      "phases": [
+        "NEW"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "40 adjustment ifs generate file output rtgs 2 days fri 7",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/19/24",
+      "end_date": "08/05/24",
+      "total_tasks": 1,
+      "duration_days": 17,
+      "phases": [
+        "WINDOWS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 mon 7",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/19/24",
+      "end_date": "08/05/24",
+      "total_tasks": 1,
+      "duration_days": 17,
+      "phases": [
+        "WINDOWS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "22",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/19/24",
+      "end_date": "08/05/24",
+      "total_tasks": 1,
+      "duration_days": 17,
+      "phases": [
+        "WINDOWS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/19/24",
+      "end_date": "08/05/24",
+      "total_tasks": 1,
+      "duration_days": 17,
+      "phases": [
+        "WINDOWS"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "40 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/23/24",
+      "end_date": "07/23/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "41 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/24/24",
+      "end_date": "07/29/24",
+      "total_tasks": 1,
+      "duration_days": 5,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "42 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "07/30/24",
+      "end_date": "07/31/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "43 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/01/24",
+      "end_date": "08/01/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "44 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/02/24",
+      "end_date": "08/05/24",
+      "total_tasks": 1,
+      "duration_days": 3,
+      "phases": [
+        "ADJUSTMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "45 ryan",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "08/06/24",
+      "end_date": "08/07/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "ADJUTSMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "47 slamet",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/24",
+      "end_date": "09/20/24",
+      "total_tasks": 1,
+      "duration_days": 14,
+      "phases": [
+        "DOCUMENTATION"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "50 deployment to testing",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/21",
+      "end_date": "09/29/21",
+      "total_tasks": 1,
+      "duration_days": 23,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "development testing 1 day fri 9",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/21",
+      "end_date": "09/29/21",
+      "total_tasks": 1,
+      "duration_days": 23,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "6",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/21",
+      "end_date": "09/29/21",
+      "total_tasks": 2,
+      "duration_days": 23,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 fri 9",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/21",
+      "end_date": "09/29/21",
+      "total_tasks": 1,
+      "duration_days": 23,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "24 47",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/06/21",
+      "end_date": "09/29/21",
+      "total_tasks": 1,
+      "duration_days": 23,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "50",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/09/24",
+      "end_date": "09/10/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "51",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "09/11/24",
+      "end_date": "09/30/24",
+      "total_tasks": 1,
+      "duration_days": 19,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "52",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "10/01/24",
+      "end_date": "10/02/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "53",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "10/03/24",
+      "end_date": "10/04/24",
+      "total_tasks": 1,
+      "duration_days": 1,
+      "phases": [
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "5530 2 5 8 11 14 17 20 23 26 29 2 5 8may 2024 june 2024 july 2024",
+      "project": "QNB - QFT MX to MT - Pro",
+      "start_date": "10/07/24",
+      "end_date": "10/11/24",
+      "total_tasks": 1,
+      "duration_days": 4,
+      "phases": [
+        "TESTING"
+      ],
+      "kompleksitas": 1
+    }
+  ]
+}

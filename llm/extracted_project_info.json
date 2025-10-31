@@ -1,0 +1,23 @@
+{
+  "nama_lengkap": [
+    "Alvyn",
+    "Herman",
+    "Jeannie",
+    "QA",
+    "Ryan",
+    "Slamet"
+  ],
+  "project": "QNB - QFT MXto MT- Pro Date",
+  "start_date": "6/12/24",
+  "end_date": "6/18/24",
+  "kompleksitas": 3,
+  "total_tasks": 53,
+  "duration_days": 6,
+  "phases": [
+    "ANALYSIS",
+    "DESIGN",
+    "DEVELOPMENT",
+    "TESTING",
+    "DEPLOYMENT"
+  ]
+}

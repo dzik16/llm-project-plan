@@ -1,0 +1,82 @@
+{
+  "data": [
+    {
+      "fullname": "slamet",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "06/18/24",
+      "end_date": "06/18/24",
+      "total_tasks": 1,
+      "duration_days": 0,
+      "phases": [
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 1
+    },
+    {
+      "fullname": "jeannie",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "07/08/24",
+      "end_date": "07/09/24",
+      "total_tasks": 1,
+      "duration_days": 2,
+      "phases": [
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 3
+    },
+    {
+      "fullname": "alvyn",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/16/24",
+      "total_tasks": 15,
+      "duration_days": 5,
+      "phases": [
+        "TESTING",
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 2
+    },
+    {
+      "fullname": "ryan",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "08/12/24",
+      "end_date": "08/12/24",
+      "total_tasks": 13,
+      "duration_days": 3,
+      "phases": [
+        "NEW OUTGOING - BKT TRANSACTION REPORT"
+      ],
+      "kompleksitas": 4
+    },
+    {
+      "fullname": "herman",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "05/2024",
+      "end_date": "07/16/24",
+      "total_tasks": 7,
+      "duration_days": 62,
+      "phases": [
+        "ANALYSIS",
+        "DESIGN",
+        "DEVELOPMENT",
+        "TESTING",
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 5
+    },
+    {
+      "fullname": "qa",
+      "project": "QNB - QFT MXto MT- Pro",
+      "start_date": "07/11/24",
+      "end_date": "07/16/24",
+      "total_tasks": 0,
+      "duration_days": 5,
+      "phases": [
+        "TESTING",
+        "DEPLOYMENT"
+      ],
+      "kompleksitas": 2
+    }
+  ]
+}

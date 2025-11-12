@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "fullname": "Unknown",
+      "project": "Unknown Project",
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31",
+      "total_tasks": 0,
+      "duration_days": 365,
+      "phases": [],
+      "kompleksitas": 1
+    }
+  ]
+}

@@ -12,6 +12,7 @@ from collections import defaultdict
 # 🔧 Fungsi: Check Ollama & Model
 # =============================
 
+
 def check_ollama_model(model_name: str = "llama3.2:3b") -> bool:
     """Check apakah Ollama running dan model tersedia"""
     try:
@@ -54,11 +55,11 @@ def scan_json_files(folder_path: str) -> List[Dict]:
     """Scan semua file JSON di folder"""
     json_files = []
     folder = Path(folder_path)
-    
+
     if not folder.exists():
         print(f"❌ Folder tidak ditemukan: {folder_path}")
         return []
-    
+
     for file_path in folder.glob("*.json"):
         try:
             file_hash = get_file_hash(str(file_path))
@@ -69,7 +70,7 @@ def scan_json_files(folder_path: str) -> List[Dict]:
             })
         except Exception as e:
             print(f"⚠️ Error reading {file_path.name}: {e}")
-    
+
     return json_files
 
 
@@ -92,7 +93,8 @@ def save_processed_files(tracking_file: str, processed_data: Dict):
 
 def get_unprocessed_files(json_files: List[Dict], processed_data: Dict) -> List[Dict]:
     """Dapatkan file yang belum diproses"""
-    processed_hashes = {f["hash"] for f in processed_data.get("processed_files", [])}
+    processed_hashes = {f["hash"]
+                        for f in processed_data.get("processed_files", [])}
     return [f for f in json_files if f["hash"] not in processed_hashes]
 
 
@@ -143,8 +145,8 @@ Project: {project_name}
 STRICT RULES:
 1. Create ONE entry per person
 2. Convert task names to LOWERCASE
-3. Include ALL start dates and finish dates for each task in arrays
-4. Calculate duration_days: (latest finish_date - earliest start_date) + 1
+3. start_date: earliest start date (single date string, not array)
+4. finish_date: latest finish date (single date string, not array)
 5. Calculate kompleksitas based on total_tasks:
    - 1 task = kompleksitas 1
    - 2-4 tasks = kompleksitas 2
@@ -160,11 +162,10 @@ Return ONLY valid JSON (no markdown, no explanation):
     {{
       "fullname": "lowercase name",
       "project": "lowercase project",
-      "start_date": ["YYYY-MM-DD", "YYYY-MM-DD"],
-      "finish_date": ["YYYY-MM-DD", "YYYY-MM-DD"],
+      "start_date": "YYYY-MM-DD",
+      "finish_date": "YYYY-MM-DD",
       "total_tasks": 0,
-      "duration_days": 0,
-      "task": ["lowercase task 1", "lowercase task 2"],
+      "tasks": ["lowercase task 1", "lowercase task 2"],
       "kompleksitas": 0
     }}
   ]
@@ -232,9 +233,10 @@ def post_process_result(result: Dict, original_data: Dict) -> Dict:
         fullname = person.get("fullname", "").lower().strip()
 
         # Get all tasks for this person from original data
-        person_tasks = [t for t in tasks if t.get("resource", "").lower() == fullname]
+        person_tasks = [t for t in tasks if t.get(
+            "resource", "").lower() == fullname]
 
-        # Rebuild arrays correctly
+        # Rebuild data correctly
         start_dates = []
         finish_dates = []
         task_names = []
@@ -244,20 +246,23 @@ def post_process_result(result: Dict, original_data: Dict) -> Dict:
             finish_dates.append(task.get("finish_date"))
             task_names.append(task.get("task_name", "").lower())
 
-        # Update person data
-        person["start_date"] = start_dates
-        person["finish_date"] = finish_dates
-        person["task"] = task_names
-        person["total_tasks"] = len(task_names)
+        # Get earliest start and latest finish
+        earliest_start = ""
+        latest_finish = ""
 
-        # Calculate duration correctly
         if start_dates and finish_dates:
             try:
-                earliest_start = min(datetime.strptime(d, "%Y-%m-%d") for d in start_dates)
-                latest_finish = max(datetime.strptime(d, "%Y-%m-%d") for d in finish_dates)
-                person["duration_days"] = (latest_finish - earliest_start).days + 1
+                earliest_start = min(start_dates)
+                latest_finish = max(finish_dates)
             except:
-                person["duration_days"] = 0
+                earliest_start = start_dates[0] if start_dates else ""
+                latest_finish = finish_dates[-1] if finish_dates else ""
+
+        # Update person data
+        person["start_date"] = earliest_start
+        person["finish_date"] = latest_finish
+        person["tasks"] = task_names
+        person["total_tasks"] = len(task_names)
 
         # Calculate kompleksitas correctly
         task_count = person["total_tasks"]
@@ -280,55 +285,67 @@ def post_process_result(result: Dict, original_data: Dict) -> Dict:
 
 
 # =============================
-# 🔀 Fungsi: Merge Data
+# 🔀 Fungsi: Merge & Group Data by Person
 # =============================
 
-def merge_project_data(existing_data: Dict, new_data: Dict) -> Dict:
-    """Merge data baru dengan data yang sudah ada"""
-    
-    if not existing_data or "data" not in existing_data:
-        return new_data
-    
-    if not new_data or "data" not in new_data:
-        return existing_data
-    
-    # Create a dictionary with (fullname, project) as key
-    merged = {}
-    
-    # Add existing data
-    for person in existing_data.get("data", []):
-        key = (person.get("fullname", "").lower(), person.get("project", "").lower())
-        merged[key] = person
-    
-    # Add or merge new data
-    for person in new_data.get("data", []):
-        key = (person.get("fullname", "").lower(), person.get("project", "").lower())
-        
-        if key in merged:
-            # Merge if same person and project (shouldn't happen, but just in case)
-            existing = merged[key]
-            
-            # Merge dates
-            all_start = list(set(existing.get("start_date", []) + person.get("start_date", [])))
-            all_finish = list(set(existing.get("finish_date", []) + person.get("finish_date", [])))
-            
-            existing["start_date"] = sorted(all_start)
-            existing["finish_date"] = sorted(all_finish)
-            
+def merge_and_group_by_person(existing_data: Dict, new_data: Dict) -> Dict:
+    """Merge data baru dengan data existing dan group by person"""
+
+    # Temporary storage: flat list with (fullname, project) as unique combo
+    temp_data = []
+
+    # Add existing data (convert from grouped format if needed)
+    if existing_data and "people" in existing_data:
+        for person in existing_data.get("people", []):
+            fullname = person.get("fullname", "").lower()
+            for project in person.get("projects", []):
+                temp_data.append({
+                    "fullname": fullname,
+                    "project": project.get("project", "").lower(),
+                    "start_date": project.get("start_date", ""),
+                    "finish_date": project.get("finish_date", ""),
+                    "total_tasks": project.get("total_tasks", 0),
+                    "tasks": project.get("tasks", []),
+                    "kompleksitas": project.get("kompleksitas", 0)
+                })
+
+    # Add new data
+    if new_data and "data" in new_data:
+        for person in new_data.get("data", []):
+            temp_data.append({
+                "fullname": person.get("fullname", "").lower(),
+                "project": person.get("project", "").lower(),
+                "start_date": person.get("start_date", ""),
+                "finish_date": person.get("finish_date", ""),
+                "total_tasks": person.get("total_tasks", 0),
+                "tasks": person.get("tasks", []),
+                "kompleksitas": person.get("kompleksitas", 0)
+            })
+
+    # Merge duplicates (same person + same project)
+    merged_dict = {}
+    for entry in temp_data:
+        key = (entry["fullname"], entry["project"])
+
+        if key in merged_dict:
+            existing = merged_dict[key]
+
             # Merge tasks
-            all_tasks = list(set(existing.get("task", []) + person.get("task", [])))
-            existing["task"] = sorted(all_tasks)
+            all_tasks = list(set(existing["tasks"] + entry["tasks"]))
+            existing["tasks"] = sorted(all_tasks)
             existing["total_tasks"] = len(all_tasks)
-            
-            # Recalculate duration
-            if existing["start_date"] and existing["finish_date"]:
-                try:
-                    earliest = min(datetime.strptime(d, "%Y-%m-%d") for d in existing["start_date"])
-                    latest = max(datetime.strptime(d, "%Y-%m-%d") for d in existing["finish_date"])
-                    existing["duration_days"] = (latest - earliest).days + 1
-                except:
-                    pass
-            
+
+            # Get earliest start and latest finish
+            dates = [existing["start_date"], entry["start_date"]]
+            dates = [d for d in dates if d]
+            if dates:
+                existing["start_date"] = min(dates)
+
+            dates = [existing["finish_date"], entry["finish_date"]]
+            dates = [d for d in dates if d]
+            if dates:
+                existing["finish_date"] = max(dates)
+
             # Recalculate kompleksitas
             task_count = existing["total_tasks"]
             if task_count >= 15:
@@ -342,10 +359,31 @@ def merge_project_data(existing_data: Dict, new_data: Dict) -> Dict:
             else:
                 existing["kompleksitas"] = 1
         else:
-            # Add new entry
-            merged[key] = person
-    
-    return {"data": list(merged.values())}
+            merged_dict[key] = entry
+
+    # Group by person
+    people_dict = defaultdict(list)
+    for entry in merged_dict.values():
+        fullname = entry["fullname"]
+        project_data = {
+            "project": entry["project"],
+            "start_date": entry["start_date"],
+            "finish_date": entry["finish_date"],
+            "total_tasks": entry["total_tasks"],
+            "kompleksitas": entry["kompleksitas"],
+            "tasks": entry["tasks"]
+        }
+        people_dict[fullname].append(project_data)
+
+    # Convert to final format
+    people_list = []
+    for fullname, projects in sorted(people_dict.items()):
+        people_list.append({
+            "fullname": fullname,
+            "projects": sorted(projects, key=lambda x: x["project"])
+        })
+
+    return {"people": people_list}
 
 
 # =============================
@@ -403,11 +441,11 @@ if __name__ == "__main__":
     # Scan JSON files
     print(f"📂 Scanning folder: {input_folder}")
     json_files = scan_json_files(input_folder)
-    
+
     if not json_files:
         print("❌ No JSON files found!")
         exit(1)
-    
+
     print(f"✅ Found {len(json_files)} JSON files")
     print()
 
@@ -417,7 +455,8 @@ if __name__ == "__main__":
 
     if not unprocessed_files:
         print("✅ All files have been processed!")
-        print(f"💡 Total files tracked: {len(processed_data.get('processed_files', []))}")
+        print(
+            f"💡 Total files tracked: {len(processed_data.get('processed_files', []))}")
         exit(0)
 
     print(f"📋 Files to process: {len(unprocessed_files)}")
@@ -426,12 +465,15 @@ if __name__ == "__main__":
     print()
 
     # Load existing results
-    existing_results = {"data": []}
+    existing_results = {"people": []}
     if os.path.exists(output_file):
         try:
             with open(output_file, 'r', encoding='utf-8') as f:
                 existing_results = json.load(f)
-            print(f"📊 Loaded existing results: {len(existing_results.get('data', []))} entries")
+            
+            # Count total entries
+            total_entries = sum(len(p.get("projects", [])) for p in existing_results.get("people", []))
+            print(f"📊 Loaded existing results: {len(existing_results.get('people', []))} people, {total_entries} project entries")
         except:
             print("⚠️ Could not load existing results, starting fresh")
     else:
@@ -443,30 +485,32 @@ if __name__ == "__main__":
     processed_count = 0
 
     for idx, file_info in enumerate(unprocessed_files, 1):
-        print(f"🔄 Processing [{idx}/{len(unprocessed_files)}]: {file_info['name']}")
+        print(
+            f"🔄 Processing [{idx}/{len(unprocessed_files)}]: {file_info['name']}")
         print("-" * 70)
-        
+
         # Load file
         json_data = load_json_file(file_info['path'])
-        
+
         if not json_data:
             print(f"   ⚠️ Skipping due to load error")
             print()
             continue
-        
+
         project_name = json_data.get('project', {}).get('name', 'Unknown')
         total_tasks = len(json_data.get('tasks', []))
-        
+
         print(f"   📌 Project: {project_name}")
         print(f"   📋 Total tasks: {total_tasks}")
-        
+
         # Extract with LLM
         result = extract_with_llm(json_data, model_name)
-        
+
         if result:
-            # Merge with accumulated new data
-            all_new_data = merge_project_data(all_new_data, result)
-            
+            # Accumulate new data (still in flat format)
+            for person in result.get("data", []):
+                all_new_data["data"].append(person)
+
             # Mark as processed
             processed_data["processed_files"].append({
                 "name": file_info['name'],
@@ -478,18 +522,24 @@ if __name__ == "__main__":
             print(f"   ✅ Successfully processed!")
         else:
             print(f"   ❌ Failed to process")
-        
+
         print()
 
-    # Merge with existing results
+    # Merge with existing results and group by person
     if processed_count > 0:
         print("=" * 70)
-        print("🔀 Merging results...")
-        final_results = merge_project_data(existing_results, all_new_data)
-        
-        print(f"   Previous entries: {len(existing_results.get('data', []))}")
-        print(f"   New entries: {len(all_new_data.get('data', []))}")
-        print(f"   Total entries: {len(final_results.get('data', []))}")
+        print("🔀 Merging and grouping results by person...")
+        final_results = merge_and_group_by_person(existing_results, all_new_data)
+
+        prev_people = len(existing_results.get('people', []))
+        prev_entries = sum(len(p.get("projects", [])) for p in existing_results.get("people", []))
+        new_entries = len(all_new_data.get('data', []))
+        final_people = len(final_results.get('people', []))
+        final_entries = sum(len(p.get("projects", [])) for p in final_results.get("people", []))
+
+        print(f"   Previous: {prev_people} people, {prev_entries} project entries")
+        print(f"   New: {new_entries} project entries")
+        print(f"   Final: {final_people} people, {final_entries} project entries")
         print()
 
         # Save results
@@ -497,7 +547,7 @@ if __name__ == "__main__":
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(final_results, f, indent=2, ensure_ascii=False)
-        
+
         # Save processed files tracking
         save_processed_files(tracking_file, processed_data)
         print(f"💾 Updated tracking file: {tracking_file}")
@@ -507,26 +557,25 @@ if __name__ == "__main__":
         print("=" * 70)
         print("📊 SUMMARY BY PERSON:")
         print("=" * 70)
-        
-        # Group by person
-        person_projects = defaultdict(list)
-        for entry in final_results.get("data", []):
-            person_projects[entry.get("fullname", "unknown")].append(entry)
-        
-        for person, projects in sorted(person_projects.items()):
-            print(f"\n👤 {person.upper()}")
-            print("-" * 70)
+
+        for person in final_results.get("people", []):
+            fullname = person.get("fullname", "unknown")
+            projects = person.get("projects", [])
             total_tasks = sum(p.get("total_tasks", 0) for p in projects)
+
+            print(f"\n👤 {fullname.upper()}")
+            print("-" * 70)
             print(f"   📋 Total projects: {len(projects)}")
             print(f"   📋 Total tasks: {total_tasks}")
-            
+
             for project in projects:
                 print(f"   📌 {project.get('project', 'unknown')}: {project.get('total_tasks', 0)} tasks")
-        
+
         print()
         print("=" * 70)
         print(f"✅ Successfully processed {processed_count} new file(s)!")
-        print(f"📊 Total entries in database: {len(final_results.get('data', []))}")
+        print(f"📊 Total people in database: {final_people}")
+        print(f"📊 Total project entries: {final_entries}")
     else:
         print("❌ No files were successfully processed")
 
